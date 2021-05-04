@@ -1,5 +1,5 @@
 {% set name = "hpp-core" %}
-{% set version = "4.10.1" %}
+{% set version = "4.11.0" %}
 
 package:
   name: {{ name }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: eb5aa3974fcdcb2dbc0250172d363d62c3d38514264419570d49389d732f6d93
+  sha256: aac7af104b3b62e0e7c84bee5c718b93e086695f1a02a29e4c4b0efdc8c379c2
   patches:
     - patches/fix_missing_boost_include.patch
     - patches/fix_rt_test_linking.patch
     - patches/fix_noexcept.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x') }}
@@ -52,7 +52,7 @@ about:
   home: https://github.com/humanoid-path-planner/{{ name }}
   license: LGPL-3.0-or-later
   license_file: COPYING
-  summary: '{{ name }} subpackage of Humanoid Path Planner suite'
+  summary: {{ name }} subpackage of Humanoid Path Planner suite
   description: |
     HPP (Humanoid Path Planner) is a collection of software packages implementing
     path planning functionalities for a humanoid robot. The core functionalities are well
