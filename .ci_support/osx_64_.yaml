@@ -1,9 +1,9 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 assimp:
-- 5.2.3
+- 5.2.4
 boost_cpp:
-- 1.74.0
+- 1.78.0
 channel_sources:
 - conda-forge
 channel_targets:
@@ -19,3 +19,5 @@ pin_run_as_build:
     max_pin: x.x.x
 target_platform:
 - osx-64
+urdfdom:
+- '3.1'

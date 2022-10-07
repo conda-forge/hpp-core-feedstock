@@ -1,7 +1,7 @@
 assimp:
-- 5.2.3
+- 5.2.4
 boost_cpp:
-- 1.74.0
+- 1.78.0
 cdt_name:
 - cos6
 channel_sources:
@@ -19,3 +19,5 @@ pin_run_as_build:
     max_pin: x.x.x
 target_platform:
 - linux-64
+urdfdom:
+- '3.1'
