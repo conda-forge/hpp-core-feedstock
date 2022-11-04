@@ -32,7 +32,7 @@ index ef02326..2b8881d 100644
 +    target_link_libraries(${NAME} ${PROJECT_NAME}-gpl)
 +  endif()
  endmacro(ADD_TESTCASE)
-
+ 
  find_package(OpenMP)
 -- 
 2.25.1
