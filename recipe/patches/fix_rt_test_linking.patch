@@ -12,8 +12,8 @@ index ef02326..2b8881d 100644
 --- tests/CMakeLists.txt
 +++ tests/CMakeLists.txt
 @@ -41,6 +41,9 @@ add_definitions(-DTEST_DIRECTORY="${CMAKE_SOURCE_DIR}/tests/data")
- # This macro will create a binary from `NAME.cc', link it against Boost and add	
- # it to the test suite.	
+ # This macro will create a binary from `NAME.cc', link it against Boost and add
+ # it to the test suite.
  #
 +
 +find_library(RT_LIB rt)
