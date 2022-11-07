@@ -12,7 +12,8 @@ source:
     - patches/fix_missing_boost_include.patch
     - patches/fix_rt_test_linking.patch
     - patches/fix_noexcept.patch
-    - patches/osx_fix_noexcept.patch  # [osx]
+    - patches/osx_fix_noexcept.patch    # [osx]
+    - patches/osx_fix_deprecated.patch  # [osx]
 
 build:
   number: 0
