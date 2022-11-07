@@ -11,29 +11,28 @@ diff --git tests/CMakeLists.txt tests/CMakeLists.txt
 index ef02326..2b8881d 100644
 --- tests/CMakeLists.txt
 +++ tests/CMakeLists.txt
-@@ -46,6 +46,9 @@ ADD_DEFINITIONS(-DTEST_DIRECTORY="${CMAKE_SOURCE_DIR}/tests/data")
- # This macro will create a binary from `NAME.cc', link it against
- # Boost and add it to the test suite.
+@@ -41,6 +41,9 @@ add_definitions(-DTEST_DIRECTORY="${CMAKE_SOURCE_DIR}/tests/data")
+ # This macro will create a binary from `NAME.cc', link it against Boost and add
+ # it to the test suite.
  #
 +
 +find_library(RT_LIB rt)
 +
- MACRO(ADD_TESTCASE NAME GENERATED)
-   IF (${GENERATED} STREQUAL TRUE)
-     ADD_UNIT_TEST(${NAME} ${CMAKE_CURRENT_BINARY_DIR}/${NAME}.cc)
-@@ -53,7 +56,11 @@ MACRO(ADD_TESTCASE NAME GENERATED)
-     ADD_UNIT_TEST(${NAME} ${NAME}.cc)
-   ENDIF()
-   TARGET_INCLUDE_DIRECTORIES(${NAME} PRIVATE ../src Boost::unit_test_framework)
--  TARGET_LINK_LIBRARIES(${NAME} ${PROJECT_NAME}-gpl)
+ macro(ADD_TESTCASE NAME GENERATED)
+   if(${GENERATED} STREQUAL TRUE)
+     add_unit_test(${NAME} ${CMAKE_CURRENT_BINARY_DIR}/${NAME}.cc)
+@@ -46,7 +49,11 @@ macro(ADD_TESTCASE NAME GENERATED)
+     add_unit_test(${NAME} ${NAME}.cc)
+   endif()
+   target_include_directories(${NAME} PRIVATE ../src Boost::unit_test_framework)
+-  target_link_libraries(${NAME} ${PROJECT_NAME}-gpl)
 +  if(RT_LIB)
-+    TARGET_LINK_LIBRARIES(${NAME} ${PROJECT_NAME}-gpl ${RT_LIB})
++    target_link_libraries(${NAME} ${PROJECT_NAME}-gpl ${RT_LIB})
 +  else()
-+    TARGET_LINK_LIBRARIES(${NAME} ${PROJECT_NAME}-gpl)
++    target_link_libraries(${NAME} ${PROJECT_NAME}-gpl)
 +  endif()
- ENDMACRO(ADD_TESTCASE)
+ endmacro(ADD_TESTCASE)
  
- FIND_PACKAGE(OpenMP)
+ find_package(OpenMP)
 -- 
 2.25.1
-

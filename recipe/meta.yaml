@@ -1,5 +1,5 @@
 {% set name = "hpp-core" %}
-{% set version = "4.13.0" %}
+{% set version = "4.14.0" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,13 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 493d9f2ced0f0d6434306e00f35184a8b98ef40108ba4db716a05fa741742bf6
+  sha256: a141a913f73a9e598afb4011d92c77e90004d7f65f0f6801aa0eba69a1907cd5
   patches:
     - patches/fix_missing_boost_include.patch
     - patches/fix_rt_test_linking.patch
     - patches/fix_noexcept.patch
-    - patches/osx_fix_noexcept.patch  # [osx]
+    - patches/osx_fix_noexcept.patch    # [osx]
+    - patches/osx_fix_deprecated.patch  # [osx]
 
 build:
   number: 0
