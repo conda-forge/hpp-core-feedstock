@@ -1,0 +1,55 @@
+From 8e8d1664597ff9e2dcd0ecebaebd392a21001a94 Mon Sep 17 00:00:00 2001
+From: Yann Dubois De Mont-Marin <ydemontm@julia.paris.inria.fr>
+Date: Wed, 9 Nov 2022 14:29:16 +0100
+Subject: [PATCH] Replace deprecated order
+
+---
+ include/hpp/core/path-vector.hh | 2 +-
+ include/hpp/core/path.hh        | 4 ++--
+ include/hpp/core/problem.hh     | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git include/hpp/core/path-vector.hh include/hpp/core/path-vector.hh
+index 0a70eeb6..5cf44835 100644
+--- include/hpp/core/path-vector.hh
++++ include/hpp/core/path-vector.hh
+@@ -122,7 +122,7 @@ class HPP_CORE_DLLAPI PathVector : public Path {
+   /// Concatenate two vectors of path
+   /// \deprecated use void method concatenate (const PathVectorPtr_t& path)
+   ///             instead.
+-  void concatenate(const PathVector& path) HPP_CORE_DEPRECATED;
++  HPP_CORE_DEPRECATED void concatenate(const PathVector& path);
+ 
+   /// Concatenate two vectors of path
+   /// \param path path to append at the end of this one
+diff --git include/hpp/core/path.hh include/hpp/core/path.hh
+index 14165c14..a1acb49b 100644
+--- include/hpp/core/path.hh
++++ include/hpp/core/path.hh
+@@ -128,8 +128,8 @@ class HPP_CORE_DLLAPI Path {
+ 
+   /// Configuration at time
+   /// \deprecated use eval instead
+-  Configuration_t operator()(const value_type& time,
+-                             bool& success) const HPP_CORE_DEPRECATED {
++  HPP_CORE_DEPRECATED Configuration_t operator()(const value_type& time,
++                             bool& success) const {
+     return eval(time, success);
+   }
+ 
+diff --git include/hpp/core/problem.hh include/hpp/core/problem.hh
+index c9a591bd..d3064b46 100644
+--- include/hpp/core/problem.hh
++++ include/hpp/core/problem.hh
+@@ -141,7 +141,7 @@ class HPP_CORE_DLLAPI Problem {
+   /// Reset the ConfigValidations
+   /// by creating a new ConfigValidations using ConfigValidations::create
+   /// \deprecated Use clear instead.
+-  void resetConfigValidations() HPP_CORE_DEPRECATED;
++  HPP_CORE_DEPRECATED void resetConfigValidations();
+ 
+   /// Clear the ConfigValidations
+   /// by calling ConfigValidations::clear
+-- 
+2.25.1
+
