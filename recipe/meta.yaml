@@ -12,11 +12,11 @@ source:
     - patches/fix_missing_boost_include.patch
     - patches/fix_rt_test_linking.patch
     - patches/fix_noexcept.patch
+    - patches/fix_deprecated.patch
     - patches/osx_fix_noexcept.patch    # [osx]
-    - patches/osx_fix_deprecated.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x') }}
