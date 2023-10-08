@@ -10,7 +10,7 @@ source:
   sha256: 953943c531f29ddd621e5ce87f4180e6ed1886273f1556bb1a970ea897092d69
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
@@ -23,7 +23,7 @@ requirements:
     - pkg-config
     - doxygen
   host:
-    - boost-cpp
+    - libboost-devel
     - tinyxml
     - urdfdom
     - assimp
@@ -34,7 +34,6 @@ requirements:
     - hpp-pinocchio  {{ version }}
     - hpp-constraints  {{ version }}
   run:
-    - boost-cpp
     - tinyxml
 
 test:
