@@ -29,6 +29,7 @@ requirements:
     - urdfdom
     - assimp
     - octomap
+    - proxsuite
     - hpp-fcl
     - hpp-util  {{ version }}
     - hpp-statistics  {{ version }}
