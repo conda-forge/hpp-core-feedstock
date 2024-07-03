@@ -1,5 +1,5 @@
 {% set name = "hpp-core" %}
-{% set version = "5.0.0" %}
+{% set version = "5.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 921562d20e9f492df4d6ab71ff3926e7c945f1e8acafd276744fd74585daca4d
+  sha256: 245e23583044ba66ff80671a0630a509acb6a6e88d7a630e115709f8bb08da84
 
 build:
   number: 0
@@ -29,6 +29,7 @@ requirements:
     - urdfdom
     - assimp
     - octomap
+    - proxsuite
     - hpp-fcl
     - hpp-util  {{ version }}
     - hpp-statistics  {{ version }}
@@ -46,8 +47,8 @@ test:
 
 about:
   home: https://github.com/humanoid-path-planner/{{ name }}
-  license: LGPL-3.0-or-later
-  license_file: COPYING
+  license: BSD-2-Clause
+  license_file: LICENSE
   summary: {{ name }} subpackage of Humanoid Path Planner suite
   description: |
     HPP (Humanoid Path Planner) is a collection of software packages implementing
