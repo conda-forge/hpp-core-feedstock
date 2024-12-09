@@ -1,5 +1,5 @@
 {% set name = "hpp-core" %}
-{% set version = "5.2.0" %}
+{% set version = "6.0.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c6771408f995f6f2a7886ca70b414d9db474a38176f94764aaa8843bd3407fdf
+  sha256: 2bbf3b1c8ce99a67b9c549e10f66161fc27ec398160dc2313e273f89c186bc6a
 
 build:
   number: 0
