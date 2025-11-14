@@ -15,13 +15,11 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '18'
+- '19'
 libboost_devel:
-- '1.86'
+- '1.88'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-proxsuite:
-- 0.7.1
 qhull:
 - '2020.2'
 target_platform:
