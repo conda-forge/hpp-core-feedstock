@@ -10,7 +10,7 @@ source:
   sha256: 1c6cdc470dbe491ee33cbeea41bead745b30fd8d26ffb659d8bbb902e74fc89b
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
@@ -27,7 +27,7 @@ requirements:
     - qhull
     - qhull-static
     - libboost-devel
-    - tinyxml
+    - tinyxml2
     - urdfdom
     - assimp
     - octomap
@@ -40,7 +40,7 @@ requirements:
   run:
     - qhull
     - qhull-static
-    - tinyxml
+    - tinyxml2
 
 test:
   requires:
